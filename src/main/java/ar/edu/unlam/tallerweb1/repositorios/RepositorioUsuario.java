@@ -5,7 +5,7 @@ import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import java.util.List;
 
 // Interface que define los metodos del Repositorio de Usuarios.
-public interface RepositorioUsuario {
+public interface RepositorioUsuario{
 	
 	Usuario buscarUsuario(String email, String password);
 	void guardar(Usuario usuario);
