@@ -1,14 +1,16 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
-@Entity
-public class Entrenador {
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import java.util.List;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Getter
+@Setter
+public class Entrenador extends Usuario{
+
+    private List<Cliente> clientes;
+
 }

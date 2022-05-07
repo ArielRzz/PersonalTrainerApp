@@ -33,7 +33,7 @@
         <!-- Collapsible wrapper -->
         <div class="navbar" id="navbarSupportedContent">
             <!-- Navbar brand -->
-            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+            <a class="navbar-brand mt-2 mt-lg-0" href="<c:url value="/login"/>">
                 <img
                         src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
                         height="15"
