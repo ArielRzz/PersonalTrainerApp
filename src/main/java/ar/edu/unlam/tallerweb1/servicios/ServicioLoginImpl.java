@@ -32,5 +32,10 @@ public class ServicioLoginImpl implements ServicioLogin {
 		return servicioLoginDao.buscarUsuario(email, password);
 	}
 
+	@Override
+	public void registrar(Usuario usuario) {
+		servicioLoginDao.guardar(usuario);
+	}
+
 
 }
