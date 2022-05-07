@@ -16,13 +16,12 @@ public class Cliente extends Usuario{
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nombre;
-    private String apellido;
     private Integer dni;
     private Date fechaDeNacimiento;
     @OneToOne
     private Plan planActual;
-    private String direccion;
+    @ManyToOne(/*no me acuerdo que pusimos*/)
+    private Entrenador entrenador;
 
 }
 

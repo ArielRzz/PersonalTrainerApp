@@ -24,13 +24,15 @@ public class Usuario{
 	private String email;
 	private String password;
 	private String rol;
+	@OneToOne
+	private Plan plan;
 
 
 	private Boolean activo = false;
 
-	@OneToOne(mappedBy = "usuario")
-	@JoinColumn(name = "direccion_id")
-	private Direccion direccion;
+	//@OneToOne(mappedBy = "usuario")
+	//@JoinColumn(name = "direccion_id")
+	//private Direccion direccion;
 
 	public void activar() {
 		activo = true;

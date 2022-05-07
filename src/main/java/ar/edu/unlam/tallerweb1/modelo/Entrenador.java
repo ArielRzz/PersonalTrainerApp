@@ -15,10 +15,6 @@ public class Entrenador extends Usuario{
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToMany
-    private List<Cliente>clientes;
-    private String nombre;
-    private String direccion;
     private Enum tipoDeEspecialidad;
 
 }
