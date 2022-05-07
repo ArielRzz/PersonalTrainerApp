@@ -1,30 +1,3 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Font Awesome -->
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    rel="stylesheet"
-    />
-    <!-- MDB -->
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css"
-    rel="stylesheet"
-    />
-</head>
-<body style="background-color: antiquewhite;">
 <!-----------------------------------------------header------------------------------------------------------------->
 <%@include file="header.jsp"%>
 <!-----------------------------------------------header------------------------------------------------------------->
@@ -126,5 +99,3 @@
 <!-------------------------------------------Footer----------------------------------------------------------------->
 <%@include file="footer.jsp"%>
 <!-------------------------------------------Footer----------------------------------------------------------------->
-</body>
-</html>

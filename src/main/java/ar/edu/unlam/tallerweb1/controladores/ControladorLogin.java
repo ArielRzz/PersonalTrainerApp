@@ -62,10 +62,19 @@ public class ControladorLogin {
 
 	@RequestMapping(path = "/registrarme")
 	public ModelAndView registrarme() {
-		ModelMap modelo = new ModelMap();
-		modelo.put("usuario", new Usuario());
-		return new ModelAndView("registroUsuario",modelo);
+
+		return new ModelAndView("registroUsuario");
 	}
+
+	@RequestMapping(path = "/registrarUsuario",method = RequestMethod.POST)
+	public ModelAndView registrarUsuario(@ModelAttribute Usuario usuario){
+		ModelMap modelo = new ModelMap();
+		servicioLogin.registrar(usuario);
+		modelo.put("message","resuelto");
+		return new ModelAndView("resultado",modelo);
+
+	}
+
 
 	// Escucha la URL /home por GET, y redirige a una vista.
 	@RequestMapping(path = "/", method = RequestMethod.GET)
