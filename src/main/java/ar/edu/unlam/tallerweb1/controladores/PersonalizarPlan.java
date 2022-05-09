@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
+import ar.edu.unlam.tallerweb1.modelo.Enums.FranjaHoraria;
+import ar.edu.unlam.tallerweb1.modelo.Enums.TiposDeModalidad;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,10 +21,17 @@ public class PersonalizarPlan {
         palabras.add("como");
         palabras.add("estas");
 
+        ArrayList<String> modalidades=new ArrayList<>();
+        ArrayList<String> franjaHoraria=new ArrayList<>();
         modelo.put("libreria",palabras);
 
+        for(Enum  nuevo: TiposDeModalidad.values()){
+            modalidades.add(nuevo.name());
+        }modelo.put("modalidades",modalidades);
 
-
+        for(Enum  nuevo: FranjaHoraria.values()){
+            franjaHoraria.add(nuevo.name());
+        }modelo.put("franjaHoraria",franjaHoraria);
 
 
         return new ModelAndView("PersonalizarPlan",modelo);

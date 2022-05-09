@@ -43,21 +43,24 @@
         <label class="form-label">Modalidad</label>
         <select class="form-select" aria-label="Default select example">
             <option selected></option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <c:forEach var="modalidades" items="${modalidades}">
+                <option value=${modalidades}>${modalidades}</option>
+            </c:forEach>
         </select>
     </div>
-
+<div class="fluid justify-content">
     <div class="mb-3">
         <label  class="form-label">Fanja horaria</label>
         <select class="form-select" aria-label="Default select example">
             <option selected></option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <c:forEach var="horario" items="${franjaHoraria}">
+                <option value=${horario}>${horario}</option>
+            </c:forEach>
         </select>
     </div>
+
+</div>
+
 
 
 
@@ -68,8 +71,10 @@
             Acepta los terminos y condiciones
         </label>
     </div>
-
+<div class="d-flex justify-content-center">
     <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+
 
 
 </form>
