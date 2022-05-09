@@ -16,9 +16,13 @@ public class Plan {
 
     private double precio;
     private String nombre;
-    private Enum tipoDeModalidad;
+    @OneToOne
+    private ModalidadDeClase tipoDeModalidad;
+    @OneToOne
+    private FranjaHoraria horario;
     @OneToOne
     private Entrenador entrenador;
+
 
 
 }
