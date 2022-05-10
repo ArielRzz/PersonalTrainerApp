@@ -11,7 +11,7 @@
         <blockquote class="blockquote mb-0">
           <p>Mejorà tu plan y accede a màs beneficios para tu entrenamiento.</p>
           <div class="d-grid gap-4 col-5 mx-auto">
-              <button class="btn btn-primary" type="button">Mejorar Plan</button>
+              <button class="btn btn-primary" type="button"> <a href="<c:url value="/mostrarPlanes"/>">Mejorar Plan</a></button>
             </div>
         </blockquote>
       </div>

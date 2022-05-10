@@ -3,7 +3,6 @@ package ar.edu.unlam.tallerweb1.modelo;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 
 // Clase que modela el concepto de Usuario, la anotacion @Entity le avisa a hibernate que esta clase es persistible
@@ -12,6 +11,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class Usuario{
 	// La anotacion id indica que este atributo es el utilizado como clave primaria de la entity, se indica que el valor es autogenerado.
 	@Id
@@ -24,13 +24,11 @@ public class Usuario{
 	private String email;
 	private String password;
 	private String rol;
-
-
 	private Boolean activo = false;
-
+	private Long idPlan;
 	@OneToOne(mappedBy = "usuario")
-	@JoinColumn(name = "direccion_id")
 	private Direccion direccion;
+
 
 	public void activar() {
 		activo = true;
