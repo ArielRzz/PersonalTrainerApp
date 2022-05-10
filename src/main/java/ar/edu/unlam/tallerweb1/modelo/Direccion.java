@@ -1,6 +1,7 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -8,18 +9,16 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class Plan {
+@NoArgsConstructor
+public class Direccion {
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String nombre;
-    private double precio;
-    private String nombre;
-    private Enum tipoDeModalidad;
-    @OneToOne
-    private Entrenador entrenador;
 
+    @JoinColumn(name = "usuario_id")
+    @OneToOne()
+    private Usuario usuario;
 
 }

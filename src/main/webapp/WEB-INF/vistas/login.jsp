@@ -12,8 +12,17 @@
 					<hr class="colorgraph"><br>
 
 					<%--Elementos de entrada de datos, el elemento path debe indicar en que atributo del objeto usuario se guardan los datos ingresados--%>
-					<form:input path="email" id="email" type="email" name="email" class="form-control" />
-					<form:input path="password" type="password" id="password"  name="password" class="form-control"/>
+					<div class="form-outline mb-4">
+						<form:input path="email" type="email" id="form1Example1" class="form-control" />
+						<label class="form-label" for="form1Example1">Email address</label>
+					</div>
+					<%--<form:input path="email" id="email" type="email" name="email" class="form-control" />--%>
+
+					<div class="form-outline mb-4">
+						<form:input path="password" type="password" id="form1Example2" class="form-control" />
+						<label class="form-label" for="form1Example2">Password</label>
+					</div>
+					<%--<form:input path="password" type="password" id="password"  name="password" class="form-control"/>--%>
 					
 					<button class="btn btn-lg btn-primary btn-block" Type="Submit"/>Login</button>
 				</form:form>

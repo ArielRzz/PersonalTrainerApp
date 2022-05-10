@@ -43,9 +43,9 @@
             </a>
         </div>
         <!-- Collapsible wrapper -->
-
         <!-- Right elements -->
-        <c:set value="${usuario}" var="object"/>
+        <%--<c:set value="${usuario.email}" var="object"/>--%>
+        <c:set value="${sessionScope.ROL }" var="object"/>
         <c:if test="${object == null}">
             <div class="d-flex align-items-center">
                 <button type="button" class="btn btn-link px-3 me-2">
@@ -56,7 +56,8 @@
                 </button>
             </div>
         </c:if>
-        <c:set value="${usuario}" var="object"/>
+<%--        <c:set value="${usuario.email}" var="object"/>--%>
+        <c:set value="${sessionScope.ROL }" var="object"/>
         <c:if test="${object !=null}">
             <div class="d-flex align-items-center">
                 <!-- Notifications -->
@@ -114,7 +115,7 @@
                             <a class="dropdown-item" href="<c:url value="/ir-a-configuracion"/>">Suscripcion y Configuracion</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Cerrar Sesion</a>
+                            <a class="dropdown-item" href="<c:url value="/cerrarSesion"/>">Cerrar Sesion</a>
                         </li>
                     </ul>
                 </div>
