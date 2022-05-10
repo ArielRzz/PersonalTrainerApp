@@ -16,4 +16,6 @@ public class TiposDeEspecialidad {
     private Long id;
 
     private String nombre;
+
+
 }

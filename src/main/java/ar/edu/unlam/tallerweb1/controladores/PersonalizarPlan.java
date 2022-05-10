@@ -1,41 +1,57 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
-import ar.edu.unlam.tallerweb1.modelo.Enums.FranjaHoraria;
-import ar.edu.unlam.tallerweb1.modelo.Enums.TiposDeModalidad;
+import ar.edu.unlam.tallerweb1.modelo.Entrenador;
+import ar.edu.unlam.tallerweb1.modelo.ModalidadDeClase;
+import ar.edu.unlam.tallerweb1.modelo.Plan;
+import ar.edu.unlam.tallerweb1.modelo.TiposDeEspecialidad;
+import ar.edu.unlam.tallerweb1.servicios.ServicioPersonalidazacionDePlan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class PersonalizarPlan {
 
+    private ServicioPersonalidazacionDePlan servicio;
+    @Autowired
+
+    public PersonalizarPlan(ServicioPersonalidazacionDePlan servicio){
+        this.servicio=servicio;
+    }
+
     @RequestMapping(path = "personalidad",method = RequestMethod.GET)
     public ModelAndView irAPersonalizarPlan(){
         ModelMap modelo=new ModelMap();
-        ArrayList<String >palabras=new ArrayList<>();
-        palabras.add("hola");
-        palabras.add("como");
-        palabras.add("estas");
-
-        ArrayList<String> modalidades=new ArrayList<>();
-        ArrayList<String> franjaHoraria=new ArrayList<>();
-        modelo.put("libreria",palabras);
-
-        for(Enum  nuevo: TiposDeModalidad.values()){
-            modalidades.add(nuevo.name());
-        }modelo.put("modalidades",modalidades);
-
-        for(Enum  nuevo: FranjaHoraria.values()){
-            franjaHoraria.add(nuevo.name());
-        }modelo.put("franjaHoraria",franjaHoraria);
-
+        List<Entrenador>entrenadores= servicio.buscarTodosLosEntrenadores();
+        modelo.put("entrenadores",entrenadores);
+        modelo.put("modalidades",servicio.buscarTodasLasModalidades());
+        modelo.put("especialidades",servicio.buscarTodasLasEspecialidades());
 
         return new ModelAndView("PersonalizarPlan",modelo);
     }
 
+    @RequestMapping(path = "personalidad",method = RequestMethod.GET)
+    public ModelAndView datosDelFormulario(@RequestParam(value="idEntrenador")Integer idEntrenador,
+                                            @RequestParam(value="idTipoDeEspecialidad")String idTipo,
+                                             @RequestParam(value="idModalidad")String idModalidad){
+        Entrenador entrenador= servicio.buscarEntrenadorPorId();
+        ModalidadDeClase modalidad= servicio.buscarModalidadPorId();
+        TiposDeEspecialidad tipo=servicio.buscarTipoDeEspecialidadPorId();
+
+        Plan plan=new Plan();
+        plan.setEntrenador(entrenador);
+        plan.setTipoDeModalidad(modalidad);
+
+
+
+
+    }
 
 }

@@ -26,40 +26,44 @@
     <h1 >Personaliza tu plan</h1>
 
 
+    <div class="mb-3">
+        <label class="form-label">Tipo de especialidad</label>
+        <select class="form-select" aria-label="Default select example" required>
+            <option selected></option>
+
+            <c:forEach var="m" items="${especialidades}">
+                <option value="${m.nombre}">${m.nombre}</option>
+            </c:forEach>
+
+        </select>
+    </div>
+
+
 
     <div class="mb-3">
         <label class="form-label">Entrenador</label>
         <select class="form-select" aria-label="Default select example">
             <option selected></option>
 
-            <c:forEach var="estudiante" items="${libreria}">
-                <option value="1">${estudiante}</option>
+            <c:forEach var="entrenadores" items="${entrenadores}">
+                <option value="${entrenadores.id}">${entrenadores.nombre}</option>
             </c:forEach>
 
         </select>
     </div>
 
-    <div class="mb-3">
-        <label class="form-label">Modalidad</label>
-        <select class="form-select" aria-label="Default select example">
-            <option selected></option>
-            <c:forEach var="modalidades" items="${modalidades}">
-                <option value=${modalidades}>${modalidades}</option>
-            </c:forEach>
-        </select>
-    </div>
-<div class="fluid justify-content">
-    <div class="mb-3">
+
+
+    <div class="mb-3 opcion2">
         <label  class="form-label">Fanja horaria</label>
         <select class="form-select" aria-label="Default select example">
             <option selected></option>
             <c:forEach var="horario" items="${franjaHoraria}">
-                <option value=${horario}>${horario}</option>
+                <option value=${horario.id}>${horario}</option>
             </c:forEach>
         </select>
     </div>
 
-</div>
 
 
 
@@ -74,6 +78,7 @@
 <div class="d-flex justify-content-center">
     <button type="submit" class="btn btn-primary">Submit</button>
 </div>
+
 
 
 
@@ -93,6 +98,6 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+<script src="js/PersonalizarPlan.jsp"> </script>
 </body>
 </html>
