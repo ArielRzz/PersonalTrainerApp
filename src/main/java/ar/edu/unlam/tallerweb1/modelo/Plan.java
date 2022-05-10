@@ -16,9 +16,10 @@ public class Plan {
 
     private String nombre;
     private double precio;
-
-    private String modalidad;
-
+    private String nombre;
+    private Enum tipoDeModalidad;
+    @OneToOne
+    private Entrenador entrenador;
 
 
 }

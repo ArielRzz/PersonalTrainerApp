@@ -25,10 +25,14 @@ public class Usuario{
 	private String password;
 	private String rol;
 	private Boolean activo = false;
-	private Long idPlan;
+
 	@OneToOne(mappedBy = "usuario")
 	private Direccion direccion;
 
+	@OneToOne
+	private Plan plan;
+	
+	private Boolean activo = false;
 
 	public void activar() {
 		activo = true;
