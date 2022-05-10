@@ -179,8 +179,8 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>RELEASE</version>
 			<scope>compile</scope>
+			<version>1.18.24</version>
 		</dependency>
-	</dependencies>
+</dependencies>
 </project>

@@ -3,14 +3,17 @@ package ar.edu.unlam.tallerweb1.controladores;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.servicios.ServicioLogin;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 
 @Controller
 public class ControladorLogin {
@@ -52,23 +55,61 @@ public class ControladorLogin {
 		Usuario usuarioBuscado = servicioLogin.consultarUsuario(datosLogin.getEmail(), datosLogin.getPassword());
 		if (usuarioBuscado != null) {
 			request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
-			return new ModelAndView("redirect:/home");
+			request.getSession().setAttribute("user",usuarioBuscado);
+			return new ModelAndView("resultado");
 		} else {
 			// si el usuario no existe agrega un mensaje de error en el modelo.
 			model.put("error", "Usuario o clave incorrecta");
 		}
 		return new ModelAndView("login", model);
 	}
+	@RequestMapping(path = "/registrarme")
+	public ModelAndView registrarme() {
+		ModelMap modelo = new ModelMap();
+		modelo.put("usuario",new Usuario());
+		return new ModelAndView("registroUsuario",modelo);
+	}
+	@RequestMapping(path = "/registrarUsuario",method = RequestMethod.POST)
+	public ModelAndView registrarUsuario(@ModelAttribute ("usuario") Usuario usuario){
+		ModelMap modelo = new ModelMap();
+		if (usuario.getEmail() == null){
+			modelo.addAttribute("usuario",usuario);
+			return registroFallido(modelo,"Debe ingresar un mail valido");
+		}
+		try{
+			servicioLogin.registrar(usuario);
+		}catch (Exception e){
+			return registroFallido(modelo,"no se pudo registrar el usuario");
+		}
+		return registroExitoso(modelo,"exito en el registro");
+	}
 
-	// Escucha la URL /home por GET, y redirige a una vista.
-	@RequestMapping(path = "/home", method = RequestMethod.GET)
-	public ModelAndView irAHome() {
+
+	@RequestMapping(path = "/cerrarSesion")
+	public ModelAndView cerrarSesion(HttpSession session){
+		session.invalidate();
 		return new ModelAndView("home");
 	}
 
-	// Escucha la url /, y redirige a la URL /login, es lo mismo que si se invoca la url /login directamente.
-	@RequestMapping(path = "/", method = RequestMethod.GET)
-	public ModelAndView inicio() {
-		return new ModelAndView("redirect:/login");
+	private ModelAndView registroExitoso(ModelMap modelo , String mensaje) {
+		modelo.put("message", mensaje);
+		return new ModelAndView("redirect/resultado",modelo);
 	}
+
+	private ModelAndView registroFallido(ModelMap modelo, String mensaje) {
+		modelo.put("message", mensaje);
+		return new ModelAndView("redirect/resultado",modelo);
+	}
+
+
+	// Escucha la URL /home por GET, y redirige a una vista.
+	@RequestMapping(path = "/", method = RequestMethod.GET)
+	public ModelAndView irAHome(@ModelAttribute("email")String email) {
+		/*ModelMap modelo= new ModelMap();
+		Usuario usuario=new Usuario();
+		usuario.setEmail("pepe@Jose.com");
+		modelo.addAttribute("usuario",usuario);*/
+		return new ModelAndView("home");
+	}
+
 }
