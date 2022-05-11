@@ -12,15 +12,15 @@ import java.util.Map;
 @Controller
 public class ControladorUsuario {
 
-    @RequestMapping(path = "/ir-a-configuracion")
-    public ModelAndView configSuscripcion(){
-        Usuario usuario =  new Usuario();
-        ModelMap modelo = new ModelMap();
-        modelo.addAttribute("usuario",usuario);
-            return new ModelAndView("/configuracionSuscripcion",modelo);
-    }
-    @RequestMapping(path = "/perfil")
-    public ModelAndView irAPerfil(){
-        return new ModelAndView("/perfilUsuario");
-    }
+//    @RequestMapping(path = "/ir-a-configuracion")
+//    public ModelAndView configSuscripcion(){
+//        Usuario usuario =  new Usuario();
+//        ModelMap modelo = new ModelMap();
+//        modelo.addAttribute("usuario",usuario);
+//            return new ModelAndView("/configuracionSuscripcion",modelo);
+//    }
+//    @RequestMapping(path = "/perfil")
+//    public ModelAndView irAPerfil(){
+//        return new ModelAndView("/perfilUsuario");
+//    }
 }

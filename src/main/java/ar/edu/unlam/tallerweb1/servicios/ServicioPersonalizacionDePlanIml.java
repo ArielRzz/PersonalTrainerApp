@@ -25,17 +25,17 @@ public class ServicioPersonalizacionDePlanIml implements ServicioPersonalidazaci
 
     @Override
     public List<Entrenador> buscarTodosLosEntrenadores() {
-        Entrenador entrenador=new Entrenador();
-        entrenador.setNombre("Cristian");
-        entrenador.setApellido("Quipildor");
-        Entrenador entrenador2=new Entrenador();
-        entrenador2.setNombre("Gabriel");
-        entrenador2.setApellido("Gonzales");
-        List<Entrenador>lista=new ArrayList<>();
-        lista.add(entrenador);
-        lista.add(entrenador2);
-        return lista;
-        //return repositorio.todosLosEntrenadores();
+//        Entrenador entrenador=new Entrenador();
+//        entrenador.setNombre("Cristian");
+//        entrenador.setApellido("Quipildor");
+//        Entrenador entrenador2=new Entrenador();
+//        entrenador2.setNombre("Gabriel");
+//        entrenador2.setApellido("Gonzales");
+//        List<Entrenador>lista=new ArrayList<>();
+//        lista.add(entrenador);
+//        lista.add(entrenador2);
+//        return lista;
+        return repositorio.todosLosEntrenadores();
     }
 
     @Override

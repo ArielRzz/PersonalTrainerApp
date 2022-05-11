@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class ControladorLogin {
@@ -43,22 +42,22 @@ public class ControladorLogin {
 	// Este metodo escucha la URL validar-login siempre y cuando se invoque con metodo http POST
 	// El metodo recibe un objeto Usuario el que tiene los datos ingresados en el form correspondiente y se corresponde con el modelAttribute definido en el
 	// tag form:form
-	@RequestMapping(path = "/validar-login", method = RequestMethod.POST)
-	public ModelAndView validarLogin(@ModelAttribute("datosLogin") DatosLogin datosLogin, HttpServletRequest request) {
-		ModelMap model = new ModelMap();
-
-		// invoca el metodo consultarUsuario del servicio y hace un redirect a la URL /home, esto es, en lugar de enviar a una vista
-		// hace una llamada a otro action a traves de la URL correspondiente a esta
-		Usuario usuarioBuscado = servicioLogin.consultarUsuario(datosLogin.getEmail(), datosLogin.getPassword());
-		if (usuarioBuscado != null) {
-			request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
-			return new ModelAndView("redirect:/home");
-		} else {
-			// si el usuario no existe agrega un mensaje de error en el modelo.
-			model.put("error", "Usuario o clave incorrecta");
-		}
-		return new ModelAndView("login", model);
-	}
+//	@RequestMapping(path = "/validar-login", method = RequestMethod.POST)
+//	public ModelAndView validarLogin(@ModelAttribute("datosLogin") DatosLogin datosLogin, HttpServletRequest request) {
+//		ModelMap model = new ModelMap();
+//
+//		// invoca el metodo consultarUsuario del servicio y hace un redirect a la URL /home, esto es, en lugar de enviar a una vista
+//		// hace una llamada a otro action a traves de la URL correspondiente a esta
+//		Usuario usuarioBuscado = servicioLogin.consultarUsuario(datosLogin.getEmail(), datosLogin.getPassword());
+//		if (usuarioBuscado != null) {
+//			request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
+//			return new ModelAndView("redirect:/home");
+//		} else {
+//			// si el usuario no existe agrega un mensaje de error en el modelo.
+//			model.put("error", "Usuario o clave incorrecta");
+//		}
+//		return new ModelAndView("login", model);
+//	}
 
 	@RequestMapping(path = "/registrarme")
 	public ModelAndView registrarme() {
@@ -81,7 +80,7 @@ public class ControladorLogin {
 	public ModelAndView irAHome() {
 		ModelMap modelo= new ModelMap();
 		Usuario usuario=new Usuario();
-		usuario.setEmail("pepe@Jose.com");
+//		usuario.setEmail("pepe@Jose.com");
 		modelo.addAttribute("usuario",usuario);
 		return new ModelAndView("home");
 	}

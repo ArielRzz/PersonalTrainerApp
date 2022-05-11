@@ -33,25 +33,18 @@ public class PersonalizarPlan {
         modelo.put("entrenadores",entrenadores);
         modelo.put("modalidades",servicio.buscarTodasLasModalidades());
         modelo.put("especialidades",servicio.buscarTodasLasEspecialidades());
-
         return new ModelAndView("PersonalizarPlan",modelo);
     }
 
-    @RequestMapping(path = "personalidad",method = RequestMethod.GET)
-    public ModelAndView datosDelFormulario(@RequestParam(value="idEntrenador")Integer idEntrenador,
-                                            @RequestParam(value="idTipoDeEspecialidad")String idTipo,
-                                             @RequestParam(value="idModalidad")String idModalidad){
-        Entrenador entrenador= servicio.buscarEntrenadorPorId();
-        ModalidadDeClase modalidad= servicio.buscarModalidadPorId();
-        TiposDeEspecialidad tipo=servicio.buscarTipoDeEspecialidadPorId();
+        @RequestMapping(path="certificadoDePago", method=RequestMethod.GET)
+        public ModelAndView certificadoDePago(@RequestParam("select")Integer idEntrenador){
 
-        Plan plan=new Plan();
-        plan.setEntrenador(entrenador);
-        plan.setTipoDeModalidad(modalidad);
+         ModelMap nuevo=new ModelMap();
 
+         nuevo.put("idEntrenedor",idEntrenador);
 
-
-
+        return new ModelAndView("PersonalizarPlan",nuevo);
     }
+
 
 }
