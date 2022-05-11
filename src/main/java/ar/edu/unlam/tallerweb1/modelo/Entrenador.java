@@ -11,11 +11,17 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Entrenador extends Usuario{
+public class Entrenador{
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Enum tipoDeEspecialidad;
+
+    private String nombre;
+    private String apellido;
+    private String email;
+    private String password;
+    private String rol;
 
 }

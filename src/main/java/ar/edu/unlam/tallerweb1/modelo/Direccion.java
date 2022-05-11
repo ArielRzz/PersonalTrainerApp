@@ -17,8 +17,8 @@ public class Direccion {
     private Long id;
 
 
-    @JoinColumn(name = "usuario_id")
-    @OneToOne()
-    private Usuario usuario;
+   // @JoinColumn(name = "usuario_id")
+   // @OneToOne()
+   // private Usuario usuario;
 
 }
