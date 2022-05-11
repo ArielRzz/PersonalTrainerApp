@@ -26,13 +26,13 @@ public class Usuario{
 	private String rol;
 	private Boolean activo = false;
 
-	@OneToOne(mappedBy = "usuario")
-	private Direccion direccion;
+	//OneToOne(mappedBy = "usuario")
+	//private Direccion direccion;
 
 	@OneToOne
 	private Plan plan;
 	
-	private Boolean activo = false;
+	//private Boolean activo = false;
 
 	public void activar() {
 		activo = true;
