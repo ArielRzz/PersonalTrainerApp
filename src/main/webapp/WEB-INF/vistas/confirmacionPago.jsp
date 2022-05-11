@@ -1,28 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Boschi's
-  Date: 30/4/2022
-  Time: 20:07
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Confirmación de plan</title>
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" >
-    <!-- Bootstrap theme -->
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/confirmacionCompra.css">
-</head>
-
-<body style="margin: 0 !important; padding: 0 !important; background-color: #eeeeee;" bgcolor="#eeeeee">
+<!-----------------------------------------------header------------------------------------------------------------->
+<%@include file="header.jsp"%>
+<!-----------------------------------------------header------------------------------------------------------------->
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
@@ -33,7 +11,6 @@
                         <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
                             <tr>
                                 <td align="center" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 25px;"> <img src="https://img.icons8.com/carbon-copy/100/000000/checked-checkbox.png" width="125" height="120" style="display: block; border: 0px;" /><br>
-                                    <i class="fa-solid fa-square-check"></i>
                                     <h2 style="font-size: 30px; font-weight: 800; line-height: 36px; color: #333333; margin: 0;"> Gracias por la compra de tu plan! </h2>
                                 </td>
                             </tr>
@@ -108,7 +85,7 @@
                                 <td align="center" style="padding: 25px 0 15px 0;">
                                     <table border="0" cellspacing="0" cellpadding="0">
                                         <tr>
-                                            <td align="center" style="border-radius: 5px;" bgcolor="#66b3b7"> <a href="#" target="_blank" style="font-size: 18px; font-family: Open Sans, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 5px; background-color: #F44336; padding: 15px 30px; border: 1px solid #F44336; display: block;">Ir al inicio</a>                                                    </td>
+                                            <td align="center" style="border-radius: 5px;" bgcolor="#66b3b7"> <a href="<c:url value="/"/>" style="font-size: 18px; font-family: Open Sans, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 5px; background-color: #F44336; padding: 15px 30px; border: 1px solid #F44336; display: block;">Ir al inicio</a>                                                    </td>
                                         </tr>
                                     </table>
                                 </td>
@@ -120,10 +97,6 @@
         </td>
     </tr>
 </table>
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
-</body>
-
-</html>
+<!-------------------------------------------Footer----------------------------------------------------------------->
+<%@include file="footer.jsp"%>
+<!-------------------------------------------Footer----------------------------------------------------------------->
