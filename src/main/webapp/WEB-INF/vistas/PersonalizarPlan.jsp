@@ -19,47 +19,51 @@
 
 <%@include file="header.jsp"%>
 
-<form class="col-5 container" action="">
+<form class="col-5 container" action="certificadoDePago">
 
 
 
     <h1 >Personaliza tu plan</h1>
 
 
+    <div class="mb-3">
+        <label class="form-label">Tipo de especialidad</label>
+        <select id="select" class="form-select" aria-label="Default select example" required>
+            <option selected></option>
+
+            <c:forEach var="entre" items="${especialidades}">
+                <option value=${entre.id}>${entre.nombre}</option>
+            </c:forEach>
+
+        </select>
+    </div>
+
+
 
     <div class="mb-3">
         <label class="form-label">Entrenador</label>
-        <select class="form-select" aria-label="Default select example">
+        <select name="select" id="select2" class="form-select" aria-label="Default select example">
             <option selected></option>
 
-            <c:forEach var="estudiante" items="${libreria}">
-                <option value="1">${estudiante}</option>
+            <c:forEach var="entre" items="${entrenadores}">
+                <option value=${entre.id}>${entre.nombre}</option>
             </c:forEach>
 
         </select>
     </div>
 
-    <div class="mb-3">
-        <label class="form-label">Modalidad</label>
-        <select class="form-select" aria-label="Default select example">
+
+
+    <div class="mb-3 opcion2">
+        <label  class="form-label">Modalidad</label>
+        <select id="select3" class="form-select" aria-label="Default select example">
             <option selected></option>
-            <c:forEach var="modalidades" items="${modalidades}">
-                <option value=${modalidades}>${modalidades}</option>
-            </c:forEach>
-        </select>
-    </div>
-<div class="fluid justify-content">
-    <div class="mb-3">
-        <label  class="form-label">Fanja horaria</label>
-        <select class="form-select" aria-label="Default select example">
-            <option selected></option>
-            <c:forEach var="horario" items="${franjaHoraria}">
-                <option value=${horario}>${horario}</option>
+            <c:forEach var="entre" items="${modalidades}">
+                <option value=${entre.id}>${entre.nombre}</option>
             </c:forEach>
         </select>
     </div>
 
-</div>
 
 
 
@@ -77,12 +81,16 @@
 
 
 
+
 </form>
 
 
 
 
-
+<c:if test="${not empty idEntrenedor}">
+    <h4><span>${idEntrenedor}</span></h4>
+    <br>
+</c:if>
 
 
 
@@ -93,6 +101,6 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+<script src="js/personalizacionDePlan.js"> </script>
 </body>
 </html>

@@ -15,10 +15,20 @@ public class Plan {
     private Long id;
 
     private String nombre;
-    private double precio;
-    private Enum tipoDeModalidad;
+
+//     @OneToOne
+//     private ModalidadDeClase tipoDeModalidad;
+//     @OneToOne
+//     private FranjaHoraria horario;
+//     @OneToOne
+//     private Entrenador entrenador;
+
+//     private double precio;
+//     private Enum tipoDeModalidad;
     //@OneToOne
    // private Entrenador entrenador;
+
+
 
 
 }

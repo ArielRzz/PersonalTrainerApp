@@ -5,18 +5,23 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
+@Entity
 @NoArgsConstructor
 public class Entrenador{
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Enum tipoDeEspecialidad;
+    private String nombre;
+    private String apellido;
+    private String email;
+    private String password;
+    private String rol;
+    @OneToOne
+    private TiposDeEspecialidad tipoDeEspecialidad;
 
     private String nombre;
     private String apellido;
