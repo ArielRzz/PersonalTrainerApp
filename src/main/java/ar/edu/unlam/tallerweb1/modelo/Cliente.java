@@ -11,10 +11,9 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Cliente extends Usuario{
+public class Cliente {
 
     @Id
-    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Integer dni;

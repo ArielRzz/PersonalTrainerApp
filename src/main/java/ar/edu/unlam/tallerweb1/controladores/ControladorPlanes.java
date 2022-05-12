@@ -26,7 +26,9 @@ public class ControladorPlanes {
 
     @RequestMapping(path = "/mostrarPlanes")
     public ModelAndView mostrarPlanes(ModelMap modelo){
+        //List<Plan> listaPlanes = new ArrayList<>();
         modelo.addAttribute("plan", servicioPlan.listarPlanes());
         return new ModelAndView("planes",modelo);
     }
+
 }
