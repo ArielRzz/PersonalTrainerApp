@@ -15,9 +15,10 @@ public class Direccion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-
-   // @JoinColumn(name = "usuario_id")
-   // @OneToOne()
-   // private Usuario usuario;
+    @OneToOne(orphanRemoval = true)
+    @JoinTable(name = "Direccion_usuario",
+            joinColumns = @JoinColumn(name = "direccion_null"),
+            inverseJoinColumns = @JoinColumn(name = "usuario_id"))
+    private Usuario usuario;
 
 }

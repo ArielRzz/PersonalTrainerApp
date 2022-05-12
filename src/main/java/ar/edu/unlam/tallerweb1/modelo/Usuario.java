@@ -31,9 +31,6 @@ public class Usuario{
 
 	@OneToOne
 	private Plan plan;
-	
-	private Boolean activo = false;
-
 	public void activar() {
 		activo = true;
     }

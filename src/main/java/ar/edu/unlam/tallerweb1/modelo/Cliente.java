@@ -22,7 +22,7 @@ public class Cliente {
     private Date fechaDeNacimiento;
     @OneToOne
     private Plan planActual;
-    @ManyToOne(/*no me acuerdo que pusimos*/)
+    @ManyToOne()
     private Entrenador entrenador;
 
 }
