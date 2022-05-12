@@ -6,12 +6,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
 @NoArgsConstructor
-public class Cliente{
+public class Cliente {
 
     @Id
     @Column(name = "id", nullable = false)
@@ -19,15 +20,8 @@ public class Cliente{
     private Long id;
     private Integer dni;
     private Date fechaDeNacimiento;
-    private String nombre;
-    private String apellido;
-    private String email;
-    private String password;
-    private String rol;
-    
     @OneToOne
     private Plan planActual;
-    
     @ManyToOne(/*no me acuerdo que pusimos*/)
     private Entrenador entrenador;
 

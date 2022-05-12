@@ -56,7 +56,7 @@ public class ControladorLogin {
 		if (usuarioBuscado != null) {
 			request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
 			request.getSession().setAttribute("user",usuarioBuscado);
-			return new ModelAndView("resultado");
+			return new ModelAndView("home");
 		} else {
 			// si el usuario no existe agrega un mensaje de error en el modelo.
 			model.put("error", "Usuario o clave incorrecta");
@@ -99,7 +99,7 @@ public class ControladorLogin {
 
 	private ModelAndView registroFallido(ModelMap modelo, String mensaje) {
 		modelo.put("message", mensaje);
-		return new ModelAndView("redirect/resultado",modelo);
+		return new ModelAndView("redirect/home",modelo);
 	}
 
 

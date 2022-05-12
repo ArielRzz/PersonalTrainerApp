@@ -16,16 +16,16 @@
             <div class="container">
                 <!-- Row  -->
                 <div class="row justify-content-center">
-                    <div class="col">
+                    <div class="col-md-8 text-center">
                         <h3 class="mb-3">Extra ordinary Pricing for your Fitness</h3>
                         <h6 class="subtitle font-weight-normal">You can relay on our amazing features list and also our customer services will be great experience for you without doubt</h6>
                     </div>
                 </div>
                 <!-- Row  -->
-                <div class="col">
+                <div class="row mt-4">
 <c:forEach items="${plan}" var="plan">
     <!-- Column -->
-    <div class="col">
+    <div class="col-md-4">
         <div class="card card-shadow border-0 mb-4">
             <img class="card-img-top" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/pricing/img1.jpg" alt="wrappixel kit">
             <div class="p-3">
@@ -39,18 +39,18 @@
                     <li class="py-1"><i class="icon-check text-success"></i> plan.modalidad</li>
                     <li class="py-1"><i class="icon-check text-success"></i> ${plan.nombre}</li>
                     <li class="py-1"><i class="icon-check text-success"></i> Morning and Evening Batches</li>
-                    <li class="py-1"><i class="icon-check text-success"></i> ${plan.precio}</li>
+                    <li class="py-1"><i class="icon-check text-success"></i> $plan.precio</li>
 
                 </ul>
-                <div class="row">
-                    <h2 class="price">$${plan.precio}</h2>
-                    <div class="text-center"><a class="btn btn-primary btn-lg" href="mostrarPlanes/plan?p=${plan.id}&pr=${plan.precio}&n=${plan.nombre}">Seleccionar plan ${plan.id}</a></div>
+                <div class="d-flex mt-3 align-items-center">
+                    <h2 class="price">$99<small>/m</small></h2>
+                    <div class="ml-auto"><a class="btn btn-danger-gradiant rounded-pill text-white btn-md border-0" href="">Choose Plan</a></div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Column
-   <button type="button" class="btn btn-primary-sm"><a href="seleccionarPlan/${plan.id}">Seleccionar</a></button>-->
+    <!-- Column -->
+    <button type="button" class="btn btn-primary"><a href="seleccionarPlan/${plan.id}">Seleccionar</a></button>
 </c:forEach>
                 </div>
             </div>
