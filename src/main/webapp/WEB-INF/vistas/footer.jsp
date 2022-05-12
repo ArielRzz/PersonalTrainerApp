@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="bg-dark text-center text-white mt-5 fixed-bottom">
+<footer class="bg-dark text-center text-white mt-5">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
         <!-- Section: Form -->

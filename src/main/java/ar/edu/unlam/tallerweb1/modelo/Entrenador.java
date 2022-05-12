@@ -1,6 +1,7 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 public class Entrenador{
     @Id
     @Column(name = "id", nullable = false)
@@ -20,5 +22,11 @@ public class Entrenador{
     private String rol;
     @OneToOne
     private TiposDeEspecialidad tipoDeEspecialidad;
+
+    private String nombre;
+    private String apellido;
+    private String email;
+    private String password;
+    private String rol;
 
 }

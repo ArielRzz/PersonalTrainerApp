@@ -14,14 +14,20 @@ public class Plan {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private double precio;
     private String nombre;
-    @OneToOne
-    private ModalidadDeClase tipoDeModalidad;
-    @OneToOne
-    private FranjaHoraria horario;
-    @OneToOne
-    private Entrenador entrenador;
+
+//     @OneToOne
+//     private ModalidadDeClase tipoDeModalidad;
+//     @OneToOne
+//     private FranjaHoraria horario;
+//     @OneToOne
+//     private Entrenador entrenador;
+
+//     private double precio;
+//     private Enum tipoDeModalidad;
+    //@OneToOne
+   // private Entrenador entrenador;
+
 
 
 

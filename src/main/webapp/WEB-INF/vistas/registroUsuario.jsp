@@ -4,13 +4,12 @@
 
 <div class = "container">
     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <%--@elvariable id="usuario" type="Usuario"--%>
-        <form:form action="/registrarUsuario" method="POST" modelAttribute="usuario" >
+
+        <form:form action="registrarUsuario" method="POST" modelAttribute="usuario">
             <h3 class="form-signin-heading">Nuevo Usuario</h3>
             <hr class="colorgraph"><br>
-            <form:input path="email"  id="email" name="email" type="email" class="form-control" />
-            <form:input path="password"  type="password" name="password" id="password" class="form-control"/>
-
+            <form:input path="email"  name="email"  class="form-control" />
+            <form:input path="password" name="password" class="form-control"/>
             <button id="btn-registrarme" class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrarme</button>
         </form:form>
 
