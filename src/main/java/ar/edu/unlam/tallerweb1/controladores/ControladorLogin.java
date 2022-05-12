@@ -106,7 +106,7 @@ public class ControladorLogin {
 	// Escucha la URL /home por GET, y redirige a una vista.
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public ModelAndView irAHome(@ModelAttribute("email")String email) {
-		/*ModelMap modelo= new ModelMap();
+		ModelMap modelo= new ModelMap();
 		Usuario usuario=new Usuario();
 		return new ModelAndView("home");
 	}
